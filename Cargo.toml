@@ -1,0 +1,13 @@
+[package]
+name = "sov-warp-utils"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.100"
+bech32 = "0.11.1"
+borsh = "1.6.0"
+clap = { version = "4.5.53", features = ["derive"] }
+hex = "0.4.3"
+serde = { version = "1.0.228", features = ["derive"] }
+sha2 = "0.10.9"
