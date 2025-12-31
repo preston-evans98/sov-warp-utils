@@ -181,7 +181,9 @@ fn get_token_id(warp_route_id: HexHash, decimals: u8) -> HexHash {
     hasher.update(&warp_route_id.0);
     hasher.update(token_name.as_bytes());
     hasher.update(&[decimals]);
-    HexString(hasher.finalize().into())
+    let mut foo: [u8; 32] = hasher.finalize().into();
+    foo[31] = decimals;
+    HexString(foo)
 }
 
 fn format_token_id(id: HexHash) -> String {
